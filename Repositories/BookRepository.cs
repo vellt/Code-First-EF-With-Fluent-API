@@ -52,7 +52,7 @@ namespace CodeFirstEFWithFluentApi.Repositories
         {
             using (var context = new BookContext())
             {
-                context.Entry(book).State = EntityState.Modified;
+                context.Books.Update(book);
                 await context.SaveChangesAsync();
             }
         }
